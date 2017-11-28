@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body ng-controller="con">
+    <h1>{{'Module 1 Homework: AngularJS Date App'}}</h1>
+    The current date is: {{newD}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.constant('theDate', new Date());
+        app.controller('con', [
+            '$scope', 'theDate', 
+            function ($scope, theDate) {
+                $scope.newD = theDate;
+            }
+        ]);
+    </script>
+  </body>
+</html>
