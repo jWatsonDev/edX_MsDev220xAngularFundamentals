@@ -16,16 +16,16 @@ app.controller('labController', [
             });
         }
 
-        function loadDetail(name) {
-            console.log('loadDetail()');
-            var url = 'https://api.github.com/repos/angular/' + name;
-            $http.get(url)
-                .then(function (response) {
-                    $scope.model.detail = response.data;
-                }, function (response) {
-                    $scope.model.detail = { error: true, message: 'Error: ' + response.data.message };
-                });
-        }
+            function loadDetail(name) {
+                console.log('loadDetail()');
+                var url = 'https://api.github.com/repos/angular/' + name;
+                $http.get(url)
+                    .then(function (response) {
+                        $scope.model.detail = response.data;
+                    }, function (response) {
+                        $scope.model.detail = { error: true, message: 'Error: ' + response.data.message };
+                    });
+            }
 
         // function getRepos() {
         //     $http.get('https://api.github.com/orgs/angular/repos')
